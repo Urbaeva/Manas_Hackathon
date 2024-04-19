@@ -6,6 +6,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </div>
+
             <div class="d-flex align-items-center">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-label="Toggle navigation">
                     <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -154,23 +155,31 @@
                             </div>
                         </li>
                         <li class="nav-item nav-icon dropdown">
-                            <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="../assets/images/Flag/flag001.png" class="img-fluid rounded-circle" alt="user" style="height: 30px; min-width: 30px; width: 30px;">
-                                <span class="bg-primary"></span>
-                            </a>
+                            @if(App::getLocale() === 'ky')
+                                <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="{{asset('assets/images/Flag/main_ky.jpg')}}" class="img-fluid rounded-circle" alt="user" style="height: 30px; min-width: 30px; width: 30px;">
+                                    <span class="bg-primary"></span>
+                                </a>
+                            @else
+                                <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="{{asset('assets/images/Flag/main_tr.jpg')}}" class="img-fluid rounded-circle" alt="user" style="height: 30px; min-width: 30px; width: 30px;">
+                                    <span class="bg-primary"></span>
+                                </a>
+                            @endif
+
                             <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                 <div class="card shadow-none m-0 border-0">
                                     <div class=" p-0 ">
                                         <ul class="dropdown-menu-1 list-group list-group-flush">
                                             <li class="dropdown-item-1 list-group-item  px-2">
-                                                <a class="p-0" href="#">
-                                                    <img src="../assets/images/Flag/flag-03.png" alt="img-flaf" class="img-fluid mr-2" style="width: 15px;height: 15px;min-width: 15px;"/>
+                                                <a class="p-0" href="#" onclick="setLocale('ky', event)">
+                                                    <img src="{{asset('assets/images/Flag/ky.png')}}" alt="img-flaf" class="img-fluid mr-2" style="width: 15px;height: 15px;min-width: 15px;"/>
                                                     KY
                                                 </a>
                                             </li>
                                             <li class="dropdown-item-1 list-group-item  px-2">
-                                                <a class="p-0" href="#">
-                                                    <img src="../assets/images/Flag/flag-04.png" alt="img-flaf" class="img-fluid mr-2" style="width: 15px;height: 15px;min-width: 15px;"/>
+                                                <a class="p-0" href="#" onclick="setLocale('tr', event)">
+                                                    <img src="{{asset('assets/images/Flag/tr.png')}}" alt="img-flaf" class="img-fluid mr-2" style="width: 15px;height: 15px;min-width: 15px;"/>
                                                     TR
                                                 </a>
                                             </li>
@@ -243,3 +252,29 @@
         </nav>
     </div>
 </div>
+
+<script>
+
+    function setLocale(locale, event)
+    {
+        event.preventDefault();
+        let current_locale = location.href;
+        let arr = current_locale.split('/');
+        if(arr[3] !== locale)
+        {
+            let ch_url = `/${locale}`;
+            let i = 3;
+            if(arr[3] === 'ky' || arr[3] === 'tr'){
+                i = 4;
+            }
+            for(; i < arr.length; i++)
+            {
+                ch_url += `/${arr[i]}`;
+            }
+            location.href = ch_url;
+        }
+    }
+
+
+
+</script>
