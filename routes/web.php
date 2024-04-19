@@ -24,10 +24,10 @@ Route::group(
             Route::group(['prefix' => '/posts'], function (){
                 Route::get('/', [PostController::class, 'index'])->name('post.index');
                 Route::get('/create', [PostController::class, 'create'])->name('post.create');
-                Route::post('/store', [PostController::class, 'store'])->name('post.store');
+                Route::post('/', [PostController::class, 'store'])->name('post.store');
                 Route::get('/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
-                Route::put('/{post}/update', [PostController::class, 'update'])->name('post.update');
-                Route::delete('/{post}/delete', [PostController::class, 'destroy'])->name('post.destroy');
+                Route::put('/', [PostController::class, 'update'])->name('post.update');
+                Route::delete('/{post}', [PostController::class, 'destroy'])->name('post.destroy');
             });
 
             Route::group(['prefix' => '/faculty'], function (){

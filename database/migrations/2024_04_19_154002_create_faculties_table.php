@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('faculties', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('name_tr');
             $table->string('image');
             $table->longText('description')->nullable();
+            $table->longText('description_tr')->nullable();
             $table->timestamps();
         });
     }

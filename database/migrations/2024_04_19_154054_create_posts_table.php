@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('name');
+            $table->string('name_tr');
             $table->longText('description');
+            $table->longText('description_tr');
             $table->unsignedBigInteger('faculty_id');
             $table->date('deadline');
             $table->foreign('faculty_id')->references('id')->on('faculties');
