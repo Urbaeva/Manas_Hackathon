@@ -2,6 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12 col-lg-12">
+
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
@@ -16,7 +17,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('faculty.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('document.store') }}" method="post">
                         @csrf
                         <div class="row">
                             <div class="col">
@@ -54,18 +55,9 @@
                                     @enderror
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="form-group">
-                            <label for="description_tr">{{ __('main.image') }}</label>
-                            <input type="file" class="form-control" name="image" id="image"
-                                   value="{{ old('image') }}">
-                            @error('image')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="{{ route('faculty.index') }}" type="button" class="btn bg-danger">Cancel</a>
+                        <a href="{{ route('document.index') }}" type="button" class="btn bg-danger">Cancel</a>
                     </form>
                 </div>
             </div>

@@ -10,6 +10,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
 
 class FacultyController extends Controller
 {
@@ -27,6 +28,7 @@ class FacultyController extends Controller
     public function store(StoreRequest $request): RedirectResponse
     {
         $data = $request->validated();
+        $data['image'] = Storage::disk('public')->put('/images', $data['image']);
         Faculty::create($data);
         return redirect()->route('faculty.index');
     }

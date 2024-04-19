@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\API\DocumentController;
 use App\Http\Controllers\API\FacultyController;
 use App\Http\Controllers\API\PostController;
+use App\Http\Controllers\API\UserController;
 use App\Http\Middleware\SetLocale;
 use App\Services\Localization\LocalizationService;
 use Illuminate\Support\Facades\Auth;
@@ -36,5 +38,16 @@ Route::group(
                 Route::get('/{faculty}/edit', [FacultyController::class, 'edit'])->name('faculty.edit');
                 Route::put('/{faculty}/update', [FacultyController::class, 'update'])->name('faculty.update');
                 Route::delete('/{faculty}/delete', [FacultyController::class, 'destroy'])->name('faculty.delete');
+            });
+
+            Route::group(['prefix' => 'document'], function (){
+                Route::get('/', [DocumentController::class, 'index'])->name('document.index');
+                Route::get('/create', [DocumentController::class, 'create'])->name('document.create');
+                Route::post('/', [DocumentController::class, 'store'])->name('document.store');
+            });
+
+            Route::group(['prefix' => 'applicant'], function (){
+                Route::get('/', [UserController::class, 'index'])->name('applicant.index');
+                Route::get('/apply/{post}', [UserController::class, 'applyForm'])->name('applicant.apply');
             });
     });
