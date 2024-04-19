@@ -18,4 +18,14 @@ class UserController extends Controller
     {
         return view('user.apply', compact('post'));
     }
+
+    public function profile()
+    {
+        return view('user.profile');
+    }
+
+    public function editProfile()
+    {
+        return view('user.edit-profile');
+    }
 }

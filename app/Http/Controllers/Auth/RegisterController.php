@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -33,20 +34,18 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
-        if (request()->has('image')) {
+        if (request()->hasFile('image')) {
             $image = request()->file('image');
-            $imageName = time().'.'.$image->getClientOriginalExtension();
-            $image->storeAs('public/profile_images', $imageName);
-            $profileImagePath = 'profile_images/'.$imageName;
+            $imagePath = Storage::disk('public')->put('profile_images', $image);
         } else {
-            $profileImagePath = 'default/path/to/default_image.jpg'; // or whatever your default path is
+            $imagePath = 'default/path/to/default_image.jpg'; // This should be a valid default path in your public directory or storage
         }
 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'profile_image' => $profileImagePath, // make sure you have 'profile_image' column in your users table
+            'image' => $imagePath, // The key here should match your database column name
         ]);
     }
 }
