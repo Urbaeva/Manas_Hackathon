@@ -7,5 +7,7 @@ return [
     'description' => 'Açıklama kirgizca',
     'description_tr' => 'Açıklama turkche',
     'image' => 'Resim',
+    'deadline' => 'Son tarih',
+    'choose_faculty' => 'Fakülte seçiniz',
     'Document' => 'Dokumanlar'
 ];

@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Posts</h4>
+                            <h4 class="card-title">Faculties</h4>
                             <div class="header-action mt-3">
                                 <a href="{{ route('faculty.create') }}" class="btn btn-primary">Add</a>
                             </div>

@@ -7,5 +7,7 @@ return [
     'description' => 'сүрөттөмө',
     'description_tr' => 'Түркчө сүрөттөмө',
     'image' => 'Сүрөт',
+    'deadline' => 'Акыркы мөөнөт',
+    'choose_faculty' => 'Факультетти тандаңыз',
     'Document' => 'Документтер'
 ];
