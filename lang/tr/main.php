@@ -10,5 +10,8 @@ return [
     'deadline' => 'Son tarih',
     'choose_faculty' => 'Fakülte seçiniz',
     'Document' => 'Dokumanlar',
-    'Apply' => 'Uygula'
+    'Apply' => 'Uygula',
+    'Faculties' => 'Fakulteler',
+    'Posts' => 'Gönderiler',
+    'post_create' => 'Gönderi oluştur'
 ];
