@@ -209,7 +209,7 @@
                         </li>
                         <li class="nav-item nav-icon dropdown">
                             <a href="#" class="nav-item nav-icon dropdown-toggle pr-0 search-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                                <img src="../assets/images/user/1.jpg" class="img-fluid avatar-rounded" alt="user">
+                                <img src="{{asset('assets/images/user/1.jpg')}}" class="img-fluid avatar-rounded" alt="user">
                                 <span class="mb-0 ml-2 user-name">John Doe</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">

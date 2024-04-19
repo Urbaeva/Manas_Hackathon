@@ -12,14 +12,14 @@
                     <form action="{{ route('faculty.store') }}" method="post">
                         @csrf
                             <div class="form-group">
-                                <label for="name">Name</label>
+                                <label for="name">{{__('faculty.name')}}</label>
                                 <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
                                 @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="name_tr">Name turkish</label>
+                                <label for="name_tr">{{__('faculty.name_tr')}}</label>
                                 <input type="text" class="form-control" name="name_tr" id="name_tr"
                                        value="{{ old('name_tr') }}">
                                 @error('name_tr')
