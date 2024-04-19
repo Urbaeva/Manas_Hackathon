@@ -1,7 +1,7 @@
 <div class="iq-sidebar  sidebar-default  ">
     <div class="iq-sidebar-logo d-flex align-items-end justify-content-between">
         <a href="../backend/index.html" class="header-logo">
-            <img src="../assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo">
+            <img src="{{asset('assets/logo326.png')}}" class="img-fluid rounded-normal light-logo" alt="logo">
             <img src="../assets/images/logo-dark.png" class="img-fluid rounded-normal d-none sidebar-light-img" alt="logo">
             <span>{{__('main.app')}}</span>
         </a>
