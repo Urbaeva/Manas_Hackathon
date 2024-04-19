@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Faculty\StoreRequest;
 use App\Http\Requests\Faculty\UpdateRequest;
 use App\Models\Faculty;
