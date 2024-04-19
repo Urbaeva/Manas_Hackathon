@@ -53,7 +53,7 @@ Route::group(
                 Route::get('/apply/{post}', [UserController::class, 'applyForm'])->name('applicant.apply');
 
                 Route::get('/profile', [UserController::class, 'profile'])->name('applicant.profile');
-                Route::get('/edit/{user}', [UserController::class, 'edit'])->name('applicant.edit');
+                Route::get('/edit/{user}', [UserController::class, 'editProfile'])->name('applicant.edit');
             });
 
             Route::group(['prefix' => '/exam'], function (){
