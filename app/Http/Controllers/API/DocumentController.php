@@ -25,6 +25,6 @@ class DocumentController extends Controller
     {
         $data = $request->validated();
         Document::create($data);
-        return redirect()->route('documents.index');
+        return redirect()->route('document.index');
     }
 }
