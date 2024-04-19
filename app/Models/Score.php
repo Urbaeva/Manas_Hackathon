@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Score extends Model
 {
     use HasFactory;
+
+    protected $table = 'scores';
+    protected $guarded = false;
 }
