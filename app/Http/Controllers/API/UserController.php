@@ -18,4 +18,9 @@ class UserController extends Controller
     {
         return view('user.apply', compact('post'));
     }
+
+    public function task()
+    {
+        return view('user.task');
+    }
 }
