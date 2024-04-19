@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <div class="header-title">
-                        <h4 class="card-title">{{ __('main.post_create') }}</h4>
+                        <h4 class="card-title">{{ __('main.exam_create') }}</h4>
                     </div>
                     <div class="header-action">
                         <i data-toggle="collapse" data-target="#form-element-2" aria-expanded="false">
@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('post.store') }}" method="post">
+                    <form action="{{ route('exam.store') }}" method="exam">
                         @csrf
                         <div class="row">
                             <div class="col">
@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="{{ route('post.index') }}" type="button" class="btn bg-danger">Cancel</a>
+                        <a href="{{ route('exam.index') }}" type="button" class="btn bg-danger">Cancel</a>
                     </form>
                 </div>
             </div>

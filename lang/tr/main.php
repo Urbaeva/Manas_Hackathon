@@ -9,5 +9,8 @@ return [
     'image' => 'Resim',
     'deadline' => 'Son tarih',
     'choose_faculty' => 'Fakülte seçiniz',
-    'Document' => 'Dokumanlar'
+    'Document' => 'Dokumanlar',
+    'Faculties' => 'Fakulteler',
+    'Posts' => 'Gönderiler',
+    'post_create' => 'Gönderi oluştur'
 ];

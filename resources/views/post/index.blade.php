@@ -35,7 +35,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach($posts as $post)
-                                    <tr>
+                                    <tr onclick="goToPage('{{$post->id}}')">
                                         <td>{{ $post->id }}</td>
                                         <td>{{ $post->name }}</td>
                                         <td>{{ $post->description }}</td>
@@ -60,4 +60,12 @@
             </div>
         </div>
     </div>
+    <script>
+        function goToPage(id)
+        {
+            location.href = `/posts/show/${id}`;
+            console.log(id);
+
+        }
+    </script>
 @endsection

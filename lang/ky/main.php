@@ -9,5 +9,8 @@ return [
     'image' => 'Сүрөт',
     'deadline' => 'Акыркы мөөнөт',
     'choose_faculty' => 'Факультетти тандаңыз',
-    'Document' => 'Документтер'
+    'Document' => 'Документтер',
+    'Faculties' => 'Факультеттер',
+    'Posts' => 'Билдирүүлөр',
+    'post_create' => 'Пост түзүү'
 ];

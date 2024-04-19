@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\DocumentController;
+use App\Http\Controllers\API\ExamController;
 use App\Http\Controllers\API\FacultyController;
 use App\Http\Controllers\API\PostController;
 use App\Http\Controllers\API\UserController;
@@ -24,6 +25,7 @@ Route::group(
 
             Route::group(['prefix' => '/posts'], function (){
                 Route::get('/', [PostController::class, 'index'])->name('post.index');
+                Route::get('/show/{post}', [PostController::class, 'show'])->name('post.show');
                 Route::get('/create', [PostController::class, 'create'])->name('post.create');
                 Route::post('/', [PostController::class, 'store'])->name('post.store');
                 Route::get('/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
@@ -49,5 +51,9 @@ Route::group(
             Route::group(['prefix' => 'applicant'], function (){
                 Route::get('/', [UserController::class, 'index'])->name('applicant.index');
                 Route::get('/apply/{post}', [UserController::class, 'applyForm'])->name('applicant.apply');
+            });
+
+            Route::group(['prefix' => '/exam'], function (){
+                 Route::post('/', [ExamController::class, 'create'])->name('exam.create');
             });
     });
