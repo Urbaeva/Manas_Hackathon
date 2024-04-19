@@ -7,6 +7,9 @@
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
                             <h4 class="card-title">Posts</h4>
+                            <div class="header-action mt-3">
+                                <a href="{{ route('post.create') }}" class="btn btn-primary">Add</a>
+                            </div>
                         </div>
                         <div class="header-action">
                             <i data-toggle="collapse" data-target="#datatable-1" aria-expanded="false">

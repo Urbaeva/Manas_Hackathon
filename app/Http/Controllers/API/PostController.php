@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\StoreRequest;
 use App\Http\Requests\Post\UpdateRequest;
+use App\Models\Faculty;
 use App\Models\Post;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -21,7 +22,8 @@ class PostController extends Controller
 
     public function create(): Factory|\Illuminate\Foundation\Application|View|Application
     {
-        return view('post.create');
+        $faculties = Faculty::all();
+        return view('post.create' , compact('faculties'));
     }
 
     public function store(StoreRequest $request): RedirectResponse
