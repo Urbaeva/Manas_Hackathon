@@ -35,14 +35,13 @@
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-
                                 <div class="form-group">
-                                    <label>Choose department</label>
+                                    <label>{{ __('main.choose_faculty') }}</label>
                                     <select class="form-control" name="faculty_id">
                                         @foreach($faculties as $faculty)
                                             <option value="{{ $faculty->id }}"
                                                 {{ $faculty->id == old('faculty_id') ? ' selected' : ''}}
-                                            >{{ $faculty->title }}</option>
+                                            >{{ $faculty->name }}</option>
                                         @endforeach
                                     </select>
                                     @error('faculty_id')
