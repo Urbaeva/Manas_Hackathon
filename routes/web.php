@@ -54,7 +54,7 @@ Route::group(
                 Route::get('/tasks', [UserController::class, 'task'])->name('applicant.task');
 
                 Route::get('/profile', [UserController::class, 'profile'])->name('applicant.profile');
-                Route::get('/edit/{user}', [UserController::class, 'edit'])->name('applicant.edit');
+                Route::get('/edit/{user}', [UserController::class, 'editProfile'])->name('applicant.edit');
             });
 
             Route::group(['prefix' => '/exam'], function (){
