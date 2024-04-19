@@ -15,11 +15,11 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|unique|max:255',
-            'name_tr' => 'required|unique|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'description' => 'nullable|text',
-            'description_tr' => 'nullable|text',
+            'name' => 'required|unique:faculties|max:255',
+            'name_tr' => 'required|unique:faculties|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'description' => 'nullable|string',
+            'description_tr' => 'nullable|string',
         ];
     }
 }

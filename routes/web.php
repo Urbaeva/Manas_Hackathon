@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\DocumentController;
 use App\Http\Controllers\API\FacultyController;
 use App\Http\Controllers\API\PostController;
 use App\Http\Controllers\API\UserController;
@@ -39,7 +40,11 @@ Route::group(
                 Route::delete('/{faculty}/delete', [FacultyController::class, 'destroy'])->name('faculty.delete');
             });
 
-
+            Route::group(['prefix' => 'document'], function (){
+                Route::get('/', [DocumentController::class, 'index'])->name('document.index');
+                Route::get('/create', [DocumentController::class, 'create'])->name('document.create');
+                Route::post('/', [DocumentController::class, 'store'])->name('document.store');
+            });
 
             Route::group(['prefix' => 'applicant'], function (){
                 Route::get('/', [UserController::class, 'index'])->name('applicant.index');
