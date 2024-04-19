@@ -14,7 +14,7 @@ class UserController extends Controller
         return view('user.index', compact('posts'));
     }
 
-    public function applyForm(int $post)
+    public function applyForm(Post $post)
     {
         return view('user.apply', compact('post'));
     }

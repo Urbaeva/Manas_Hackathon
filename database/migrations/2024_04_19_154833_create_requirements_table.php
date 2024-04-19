@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('post_id');
             $table->unsignedBigInteger('document_id');
+            $table->integer('priority')->default(0);
+            $table->date('deadline')->nullable();
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->foreign('document_id')->references('id')->on('documents')->onDelete('cascade');
             $table->index(['post_id', 'document_id']);

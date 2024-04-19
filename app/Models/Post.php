@@ -13,4 +13,14 @@ class Post extends Model
 
     protected $table = 'posts';
     protected $guarded = false;
+
+    public function faculty()
+    {
+        return $this->belongsTo(Faculty::class);
+    }
+
+    public function documents()
+    {
+        return $this->belongsToMany(Document::class, 'requirements', 'post_id', 'document_id');
+    }
 }

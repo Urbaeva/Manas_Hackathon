@@ -9,5 +9,6 @@ return [
     'image' => 'Resim',
     'deadline' => 'Son tarih',
     'choose_faculty' => 'Fakülte seçiniz',
-    'Document' => 'Dokumanlar'
+    'Document' => 'Dokumanlar',
+    'Apply' => 'Uygula'
 ];

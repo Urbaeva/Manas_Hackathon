@@ -18,7 +18,7 @@ Auth::routes();
 Route::group(
     [
         'prefix' => LocalizationService::locale(),
-        'middleware' => SetLocale::class
+        'middleware' => [SetLocale::class, 'auth']
     ], function(){
             Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
