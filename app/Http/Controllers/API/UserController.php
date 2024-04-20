@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\SendNotificationJob;
+use App\Models\Application;
 use App\Models\Notification;
 use App\Models\Post;
 use App\Models\Upload;
@@ -74,7 +75,10 @@ class UserController extends Controller
             }
         }
 
-
+        Application::create([
+            'user_id' => auth()->id(),
+            'post_id' => $post->id
+        ]);
         $notification = Notification::create([
             'user_id' => auth()->id(),
             'message' => "Сиз $post->name катталдыңыз \n Керектүү документтерди жүктөөнү унутпаңыз"

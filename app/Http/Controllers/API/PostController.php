@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\StoreRequest;
 use App\Http\Requests\Post\UpdateRequest;
 use App\Models\Commission;
+use App\Models\Document;
 use App\Models\Faculty;
 use App\Models\Post;
+use App\Models\Requirement;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -40,7 +42,9 @@ class PostController extends Controller
     {
         $teachers = User::where('role', User::TEACHER)->get();
         $commissions = Commission::where('post_id', $post->id)->pluck('user_id')->toArray();
-        return view('post.show', compact('post', 'teachers', 'commissions'));
+        $requirements = Requirement::where('post_id', $post->id)->pluck('document_id')->toArray();
+        $documents = Document::all();
+        return view('post.show', compact('post', 'teachers', 'commissions', 'requirements', 'documents'));
     }
 
     public function edit(Post $post): Factory|\Illuminate\Foundation\Application|View|Application
@@ -69,6 +73,21 @@ class PostController extends Controller
             Commission::create([
                 'post_id' => $post->id,
                 'user_id' => $key,
+            ]);
+        }
+        return back();
+    }
+
+
+    public function addDocument(Request $request, Post $post)
+    {
+        $data = $request->all();
+        unset($data['_token']);
+        Requirement::where('post_id', $post->id)->delete();
+        foreach ($data as $key => $value) {
+            Requirement::create([
+                'post_id' => $post->id,
+                'document_id' => $key,
             ]);
         }
         return back();
