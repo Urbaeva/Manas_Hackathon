@@ -32,7 +32,10 @@ Route::group(
         Route::get('/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
         Route::put('/', [PostController::class, 'update'])->name('post.update');
         Route::delete('/{post}', [PostController::class, 'destroy'])->name('post.destroy');
+
+        Route::post('/addCommission/{post}', [PostController::class, 'addCommission'])->name('post.addCommission');
     });
+
 
     Route::group(['prefix' => '/faculty'], function () {
         Route::get('/', [FacultyController::class, 'index'])->name('faculty.index');
