@@ -86,4 +86,12 @@ class UserController extends Controller
         SendNotificationJob::dispatch(auth()->user(), $notification);
         return redirect()->route('applicant.task');
     }
+
+    public function rating(Post $post)
+    {
+        $post->load(['applications.user' => function ($query) {
+            $query->orderBy('score', 'desc');
+        }]);
+        return view('user.rating', compact('post'));
+    }
 }

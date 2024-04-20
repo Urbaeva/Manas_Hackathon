@@ -19,6 +19,8 @@ return [
     'choose_comm' => 'Комиссия тандоо',
     'registered_user' => 'Катталгандар',
     'documents' => 'Документтер',
-    'applicants' => 'Абитуриенттер'
+    'applicants' => 'Абитуриенттер',
+    'programmes' => 'Программалар',
+    'rating' => 'Рейтинг',
 
 ];
