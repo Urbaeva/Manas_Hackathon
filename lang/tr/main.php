@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'app' => 'Manas',
+    'app' => 'KTMU',
     'name' => 'Adı',
     'name_tr' => 'Adı',
     'description' => 'Açıklama kirgizca',
@@ -13,7 +13,11 @@ return [
     'Apply' => 'Uygula',
     'Faculties' => 'Fakulteler',
     'Faculty' => 'Fakulte',
-    'Posts' => 'Gönderiler',
+    'Posts' => 'Duyuru Bilgileri',
     'post_create' => 'Gönderi oluştur',
     'place' => 'Kvota',
+    'choose_comm' => 'Komisyon seçimi',
+    'registered_user' => 'Kayıtlılar',
+    'documents' => 'Belgeler',
+    'applicants' => 'Başvuru sahipleri',
 ];
