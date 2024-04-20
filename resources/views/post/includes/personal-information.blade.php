@@ -4,6 +4,7 @@
             <div class="header-title">
                 <h4 class="card-title">Маалымат</h4>
             </div>
+            <a href="{{route('exam.index', $post->id)}}" class="btn btn-outline-success rounded-pill mt-2">Exam</a>
         </div>
         <div class="card-body">
             <form>
@@ -25,7 +26,8 @@
                     <div class="form-group col-sm-6"> <label for="uname">Дата:</label> <input type="text" class="form-control" id="uname" value="20.04.2024-14.05.2024" disabled> </div>
                     <div class="form-group col-sm-6"> <label for="cname">City:</label> <input type="text" class="form-control" id="cname" value="Atlanta" disabled> </div>
 
-                </div> <button type="submit" class="btn btn-primary">Очуруу</button> </form>
+                </div> <button type="submit" class="btn btn-primary">Очуруу</button>
+                </form>
         </div>
     </div>
 </div>

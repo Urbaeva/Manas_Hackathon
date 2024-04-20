@@ -23,4 +23,9 @@ class Post extends Model
     {
         return $this->belongsToMany(Document::class, 'requirements', 'post_id', 'document_id')->withPivot(['priority', 'deadline']);
     }
+
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
+    }
 }

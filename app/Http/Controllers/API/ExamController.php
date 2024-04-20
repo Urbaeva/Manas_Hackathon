@@ -6,14 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Exam\StoreRequest;
 use App\Http\Requests\Exam\UpdateRequest;
 use App\Models\Exam;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class ExamController extends Controller
 {
-    public function index()
+    public function index(Post $post)
     {
-        $exams = Exam::all();
-        return view('exam.index', compact('exams'));
+
+        return view('exam.index', compact('post'));
     }
 
 

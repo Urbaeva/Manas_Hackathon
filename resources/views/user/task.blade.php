@@ -10,19 +10,19 @@
                             <div class="col-sm-12" data-toggle="modal" data-target="#modal{{$doc->id}}">
                                 @if($doc->status == 0)
                                     <img width="50px" height="50px" src="{{asset('assets/warning.png')}}">
-                                    <a class="collapsed"><span> Distracted by the readable page whent? </span>
+                                    <a class="collapsed"><span> {{$doc->document->name}} </span>
                                     </a>
                                 @elseif($doc->status == 1)
                                     <img width="50px" height="50px" src="{{asset('assets/painding.png')}}">
-                                    <a class="collapsed"><span> Distracted by the readable page whent? </span>
+                                    <a class="collapsed"><span> {{$doc->document->name}} </span>
                                     </a>
                                 @elseif($doc->status == 2)
                                     <img width="50px" height="50px" src="{{asset('assets/tick.png')}}">
-                                    <a class="collapsed"><span> Distracted by the readable page whent? </span>
+                                    <a class="collapsed"><span> {{$doc->document->name}} </span>
                                     </a>
                                 @else
                                     <img width="50px" height="50px" src="{{asset('assets/error.png')}}">
-                                    <a class="collapsed"><span> Distracted by the readable page whent? </span>
+                                    <a class="collapsed"><span> {{$doc->document->name}} </span>
                                     </a>
                                 @endif
                             </div>
