@@ -34,6 +34,7 @@ Route::group(
         Route::delete('/{post}', [PostController::class, 'destroy'])->name('post.destroy');
 
         Route::post('/addCommission/{post}', [PostController::class, 'addCommission'])->name('post.addCommission');
+        Route::post('/addDocument/{post}', [PostController::class, 'addDocument'])->name('post.addDocument');
     });
 
 
