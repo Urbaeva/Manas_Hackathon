@@ -24,15 +24,18 @@
                     <div class="collapse" id="form-element-6">
                         <div class="card"></div>
                     </div>
-                    <form action="{{route('applicant.apply', $post->id)}}" method="POST" enctype="multipart/form-data">
-
+                    <form action="{{route('applicant.apply.store', $post->id)}}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         @foreach($post->documents as $document)
                             <div class="form-group">
                                 <label for="exampleInputEmail2">{{$document->name}}</label>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" aria-describedby="nameHint{{$post->id}}" id="customFile" name="{{$document->id}}">
+                                    <input type="file" class="custom-file-input" aria-describedby="nameHint{{$post->id}}" id="customFile" name="{{$document->id}}" {{$document->pivot->priority == 1 ? 'required' : ''}}>
                                     <label class="custom-file-label" for="customFile"></label>
                                     <div id="nameHint{{$post->id}}" class="hint">{{$document->description}}</div>
+                                    @if($document->pivot->priority == 0)
+                                        <div id="nameHint{{$post->id}}" class="hint">{{\Carbon\Carbon::parse($document->pivot->deadline)->format('d.m.Y') . " Чейин жүктөө зарыл"}}</div>
+                                    @endif
                                 </div>
                             </div>
                         @endforeach

@@ -21,6 +21,6 @@ class Post extends Model
 
     public function documents()
     {
-        return $this->belongsToMany(Document::class, 'requirements', 'post_id', 'document_id');
+        return $this->belongsToMany(Document::class, 'requirements', 'post_id', 'document_id')->withPivot(['priority', 'deadline']);
     }
 }

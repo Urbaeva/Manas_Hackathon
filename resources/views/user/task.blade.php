@@ -1,5 +1,45 @@
 @extends('layouts.main')
 @section('content')
+
+    <div class="iq-accordion career-style faq-style">
+        <div class="card iq-accordion-block">
+            <div class="active-faq clearfix" id="headingTwo">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <img width="50px" height="50px" src="{{asset('assets/tick.png')}}">
+                            <a class="collapsed"><span> Distracted by the readable page whent? </span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="iq-accordion career-style faq-style">
+        <div class="card iq-accordion-block">
+            <div class="active-faq clearfix" id="headingTwo">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <img width="50px" height="50px" src="{{asset('assets/warning.png')}}">
+                            <a class="collapsed"><span> Distracted by the readable page whent? </span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="iq-accordion career-style faq-style">
+        <div class="card iq-accordion-block">
+            <div class="active-faq clearfix" id="headingTwo">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <img width="50px" height="50px" src="{{asset('assets/error.png')}}">
+                            <a class="collapsed"><span> Distracted by the readable page whent? </span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <button type="button" class="btn btn-primary mt-2 mr-2" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
     <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"   aria-hidden="true">
         <div class="modal-dialog modal-xl">

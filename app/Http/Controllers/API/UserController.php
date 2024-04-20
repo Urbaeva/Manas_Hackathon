@@ -4,10 +4,18 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    protected UserService $userService;
+
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+
     public function index()
     {
         $posts = Post::all();
@@ -32,5 +40,15 @@ class UserController extends Controller
     public function task()
     {
         return view('user.task');
+    }
+
+    public function apply(Request $request)
+    {
+        $data = $request->all();
+        unset($data['_token']);
+        foreach ($data as $key => $value) {
+            $this->userService->uploadDocs(auth()->id(), $value, $key);
+        }
+        return redirect()->route('applicant.task');
     }
 }

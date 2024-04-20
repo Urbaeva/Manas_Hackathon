@@ -51,6 +51,7 @@ Route::group(
             Route::group(['prefix' => 'applicant'], function (){
                 Route::get('/', [UserController::class, 'index'])->name('applicant.index');
                 Route::get('/apply/{post}', [UserController::class, 'applyForm'])->name('applicant.apply');
+                Route::post('/apply/store/{post}', [UserController::class, 'apply'])->name('applicant.apply.store');
                 Route::get('/tasks', [UserController::class, 'task'])->name('applicant.task');
 
                 Route::get('/profile', [UserController::class, 'profile'])->name('applicant.profile');
