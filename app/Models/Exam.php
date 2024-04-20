@@ -11,4 +11,9 @@ class Exam extends Model
 
     protected $table = 'exams';
     protected $guarded = false;
+
+    public function scores()
+    {
+        return $this->hasMany(Score::class);
+    }
 }

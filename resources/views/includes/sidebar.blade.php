@@ -80,7 +80,7 @@
                     </li>
                 @endif
 
-                @if(auth()->user()->role === \App\Models\User::USER)
+{{--                @if(auth()->user()->role === \App\Models\User::USER)--}}
                     <li class=" sidebar-layout">
                         <a href="{{route('applicant.index')}}" class="svg-icon">
                             <i class="">
@@ -106,7 +106,7 @@
                         </a>
                     </li>
 
-                @endif
+{{--                @endif--}}
                 @if(auth()->user()->role === \App\Models\User::TEACHER)
                     <li class=" sidebar-layout">
                         <a href="{{route('commission.index')}}" class="svg-icon">

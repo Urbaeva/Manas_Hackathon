@@ -89,9 +89,14 @@ class UserController extends Controller
 
     public function rating(Post $post)
     {
+
         $post->load(['applications.user' => function ($query) {
             $query->orderBy('score', 'desc');
         }]);
+        foreach ($post->applications as $application) {
+            $application->score = round($application->user->exams->first()->scores->avg('score'), 2);
+
+        }
         return view('user.rating', compact('post'));
     }
 }

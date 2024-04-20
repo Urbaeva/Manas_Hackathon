@@ -13,10 +13,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/backend.css?v=1.0.0')}}">  </head>
 <body class="  ">
 <!-- loader Start -->
-<div id="loading">
-    <div id="loading-center">
-    </div>
-</div>
+
 <!-- loader END -->
 <!-- Wrapper Start -->
 <div class="wrapper">

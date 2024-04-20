@@ -88,5 +88,6 @@ Route::group(
     Route::group(['prefix' => '/commission'], function () {
         Route::get('/', [CommissionController::class, 'index'])->name('commission.index');
         Route::get('/check/{application}', [CommissionController::class, 'check'])->name('commission.check');
+        Route::post('/storeCheck/{application}', [CommissionController::class, 'storeCheck'])->name('commission.storeCheck');
     });
 });

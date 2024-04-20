@@ -35,7 +35,7 @@
                                 <tr>
                                     <th scope="row">{{ $application->user->id }}</th>
                                     <td>{{ $application->user->name }}</td>
-                                    <td>scoresaaa</td>
+                                    <td>{{$application->score}}</td>
                                     <td>{{ $application->post->faculty->name }}</td>
                                 </tr>
                             @endforeach

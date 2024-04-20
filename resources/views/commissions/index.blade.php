@@ -16,7 +16,11 @@
                         </div>
                         <div class="bottom-bottom">
                             <div class="social-links-container">
-                                <span class="name" style="color: white;font-size: 1.3rem;">91/100</span>
+                                @if(count($application->user->exams))
+                                    @if($application->user->exams->first()->scores->where('commission_id', auth()->id())->first())
+                                <span class="name" style="color: white;font-size: 1.3rem;">{{$application->user->exams->first()->scores->where('commission_id', auth()->id())->first()->score}}/100</span>
+                                    @endif
+                                @endif
                             </div>
                             <a href="{{route('commission.check', $application->id)}}" class="button">Текшеруу</a>
                         </div>
