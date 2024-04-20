@@ -75,5 +75,6 @@ Route::group(
 
     Route::group(['prefix' => 'exam'], function () {
         Route::get('/{post}', [ExamController::class, 'index'])->name('exam.index');
+        Route::post('/{application}', [ExamController::class, 'store'])->name('exam.store');
     });
 });
