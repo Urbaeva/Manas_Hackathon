@@ -13,7 +13,22 @@ class RegisterController extends Controller
 {
     use RegistersUsers;
 
-    protected string $redirectTo = '/home';
+    protected function redirectTo(): string
+    {
+        $user = auth()->user();
+
+        switch ($user->role) {
+            case User::USER:
+                return route('applicant.index');
+            case User::TEACHER:
+            case User::ADMIN:
+                return '/';
+            case User::APPLICANT:
+                return '/applicant';
+            default:
+                return '/home';
+        }
+    }
 
     public function __construct()
     {

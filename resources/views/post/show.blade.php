@@ -7,16 +7,16 @@
                     <div class="iq-edit-list usr-edit">
                         <ul class="iq-edit-profile d-flex nav nav-pills">
                             <li class="col-md-3 p-0"> <a class="nav-link active" data-toggle="pill" href="#personal-information">
-                                    Жарыя маалыматы
+                                    {{ __('main.Posts') }}
                                 </a> </li>
                             <li class="col-md-3 p-0"> <a class="nav-link" data-toggle="pill" href="#chang-pwd">
-                                    Комиссия тандоо
+                                    {{ __('main.choose_comm') }}
                                 </a> </li>
                             <li class="col-md-3 p-0"> <a class="nav-link" data-toggle="pill" href="#emailandsms">
-                                    Катталгандар
+                                    {{ __('main.registered_user') }}
                                 </a> </li>
                             <li class="col-md-3 p-0"> <a class="nav-link" data-toggle="pill" href="#manage-contact">
-                                    Документтер
+                                    {{ __('main.documents') }}
                                 </a> </li>
                         </ul>
                     </div>

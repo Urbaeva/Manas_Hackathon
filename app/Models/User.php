@@ -10,8 +10,9 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    const ADMIN = 2;
-    const TEACHER = 1;
+    const ADMIN = 3;
+    const TEACHER = 2;
+    const APPLICANT = 1;
     const USER = 0;
 
     public static function getRoles(): array
@@ -19,6 +20,7 @@ class User extends Authenticatable
         return [
             self::ADMIN => 'ADMIN',
             self::TEACHER => 'TEACHER',
+            self::APPLICANT => 'APPLICANT',
             self::USER => 'USER',
         ];
     }
