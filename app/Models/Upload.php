@@ -11,4 +11,9 @@ class Upload extends Model
 
     protected $table = 'uploads';
     protected $guarded = false;
+
+    public function document()
+    {
+        return $this->belongsTo(Document::class);
+    }
 }

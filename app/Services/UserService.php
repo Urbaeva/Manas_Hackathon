@@ -17,7 +17,8 @@ class UserService
             Upload::query()->create([
                 'user_id' => $user_id,
                 'document_id' => $document_id,
-                'file_path' => $file_path
+                'file_path' => $file_path,
+                'status' => 1
             ]);
         }
     }

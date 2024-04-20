@@ -53,6 +53,7 @@ Route::group(
                 Route::get('/apply/{post}', [UserController::class, 'applyForm'])->name('applicant.apply');
                 Route::post('/apply/store/{post}', [UserController::class, 'apply'])->name('applicant.apply.store');
                 Route::get('/tasks', [UserController::class, 'task'])->name('applicant.task');
+                Route::post('/tasks/upload/{upload}', [UserController::class, 'uploadDoc'])->name('applicant.task.uploadDoc');
 
                 Route::get('/profile', [UserController::class, 'profile'])->name('applicant.profile');
                 Route::get('/edit/{user}', [UserController::class, 'editProfile'])->name('applicant.edit');

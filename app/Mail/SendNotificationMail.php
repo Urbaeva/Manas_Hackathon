@@ -2,6 +2,8 @@
 
 namespace App\Mail;
 
+use App\Models\Notification;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -16,38 +18,18 @@ class SendNotificationMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+
+    public User $user;
+    public Notification $notification;
+    public function __construct(User $user, Notification $notification)
     {
-        //
+        $this->user = $user;
+        $this->notification = $notification;
     }
 
-    /**
-     * Get the message envelope.
-     */
-    public function envelope(): Envelope
+    public function build()
     {
-        return new Envelope(
-            subject: 'Send Notification Mail',
-        );
-    }
-
-    /**
-     * Get the message content definition.
-     */
-    public function content(): Content
-    {
-        return new Content(
-            view: 'view.name',
-        );
-    }
-
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
-    public function attachments(): array
-    {
-        return [];
+        return $this->from(env('MAIL_FROM_ADDRESS'), 'Manas notification')
+            ->view('mail.sendNotification', ['user' => $this->user, 'notification' => $this->notification]);
     }
 }
