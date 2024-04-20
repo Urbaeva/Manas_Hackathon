@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\ApplicationController;
+use App\Http\Controllers\API\CommissionController;
 use App\Http\Controllers\API\DocumentController;
 use App\Http\Controllers\API\ExamController;
 use App\Http\Controllers\API\FacultyController;
@@ -80,5 +81,11 @@ Route::group(
     Route::group(['prefix' => 'exam'], function () {
         Route::get('/{post}', [ExamController::class, 'index'])->name('exam.index');
         Route::post('/{application}', [ExamController::class, 'store'])->name('exam.store');
+    });
+
+
+    Route::group(['prefix' => '/commission'], function () {
+        Route::get('/', [CommissionController::class, 'index'])->name('commission.index');
+        Route::get('/check/{application}', [CommissionController::class, 'check'])->name('commission.check');
     });
 });

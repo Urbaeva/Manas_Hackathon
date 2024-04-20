@@ -15,4 +15,9 @@ class Faculty extends Model
     protected $table = 'faculties';
     protected $guarded = false;
 
+    public function post()
+    {
+        return $this->hasMany(Post::class);
+    }
+
 }
