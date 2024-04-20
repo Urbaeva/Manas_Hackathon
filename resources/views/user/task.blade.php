@@ -35,7 +35,7 @@
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
+                        <h5 class="modal-title">{{$doc->document->name}}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -49,8 +49,8 @@
                                 <form action="{{route('applicant.task.uploadDoc', $doc->id)}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group mb-0">
-                                        <label for="colFormLabelLg" class="pb-0">{{$doc->document->name}}</label>
-                                        <input type="file" class="form-control form-control-lg" id="colFormLabelLg" name="file">
+{{--                                        <label for="colFormLabelLg" class="pb-0">{{$doc->document->name}}</label> <br>--}}
+                                        <input type="file" class="mt-1" id="colFormLabelLg" name="file">
                                     </div>
                                     <button type="submit" class="btn btn-primary mb-4 mt-4">Save changes</button>
                                 </form>
