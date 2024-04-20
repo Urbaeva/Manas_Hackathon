@@ -5,13 +5,13 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\StoreRequest;
 use App\Http\Requests\Post\UpdateRequest;
+use App\Models\Application;
 use App\Models\Commission;
 use App\Models\Document;
 use App\Models\Faculty;
 use App\Models\Post;
 use App\Models\Requirement;
 use App\Models\User;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -38,13 +38,14 @@ class PostController extends Controller
         return redirect()->route('post.index');
     }
 
-    public function show(Post $post): Factory|\Illuminate\Foundation\Application|View|Application
+    public function show(Post $post)
     {
         $teachers = User::where('role', User::TEACHER)->get();
         $commissions = Commission::where('post_id', $post->id)->pluck('user_id')->toArray();
         $requirements = Requirement::where('post_id', $post->id)->pluck('document_id')->toArray();
         $documents = Document::all();
-        return view('post.show', compact('post', 'teachers', 'commissions', 'requirements', 'documents'));
+        $applications = Application::all();
+        return view('post.show', compact('post', 'teachers', 'commissions', 'requirements', 'documents', 'applications'));
     }
 
     public function edit(Post $post): Factory|\Illuminate\Foundation\Application|View|Application

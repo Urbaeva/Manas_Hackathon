@@ -66,6 +66,7 @@ Route::group(
 
     Route::group(['prefix' => 'application'], function () {
         Route::get('/', [ApplicationController::class, 'index'])->name('application.index');
+        Route::get('/{application}/show', [ApplicationController::class, 'show'])->name('application.show');
     });
 
     Route::group(['prefix' => '/exam'], function () {
