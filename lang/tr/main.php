@@ -2,7 +2,7 @@
 
 return [
     'app' => 'Manas',
-    'name' => 'Kırgıyça adı',
+    'name' => 'Adı',
     'name_tr' => 'Adı',
     'description' => 'Açıklama kirgizca',
     'description_tr' => 'Açıklama turkche',
@@ -12,6 +12,8 @@ return [
     'Document' => 'Dokumanlar',
     'Apply' => 'Uygula',
     'Faculties' => 'Fakulteler',
+    'Faculty' => 'Fakulte',
     'Posts' => 'Gönderiler',
-    'post_create' => 'Gönderi oluştur'
+    'post_create' => 'Gönderi oluştur',
+    'place' => 'Kvota',
 ];

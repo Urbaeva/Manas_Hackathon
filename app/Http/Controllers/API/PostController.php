@@ -7,6 +7,7 @@ use App\Http\Requests\Post\StoreRequest;
 use App\Http\Requests\Post\UpdateRequest;
 use App\Models\Faculty;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -35,7 +36,8 @@ class PostController extends Controller
 
     public function show(Post $post): Factory|\Illuminate\Foundation\Application|View|Application
     {
-        return view('post.show', compact('post'));
+        $teachers = User::where('role', User::TEACHER)->get();
+        return view('post.show', compact('post', 'teachers'));
     }
 
     public function edit(Post $post): Factory|\Illuminate\Foundation\Application|View|Application
