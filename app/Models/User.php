@@ -11,6 +11,19 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    const ADMIN = 2;
+    const TEACHER = 1;
+    const USER = 0;
+
+    public static function getRoles(): array
+    {
+        return [
+            self::ADMIN => 'ADMIN',
+            self::TEACHER => 'TEACHER',
+            self::USER => 'USER',
+        ];
+    }
+
     /**
      * The attributes that are mass assignable.
      *
