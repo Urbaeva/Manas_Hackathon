@@ -9,7 +9,7 @@
                     <div class="bottom">
                         <div class="content">
                             <span class="name">{{$application->user->name}}</span>
-                            <span class="about-me">Lorem ipsum dolor sit amet consectetur adipisicinFcls </span>
+                            <span class="about-me">{{$application->user->email}}</span>
                         </div>
                         <div class="bottom-bottom">
                             <div class="social-links-container">

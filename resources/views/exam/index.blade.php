@@ -44,6 +44,7 @@
                                 <a class="collapsed"><span> {{$application->user->name}} </span>
                                 </a>
                             </div>
+                            @if(count($application->user->exams))
                             <div class="col-md-6 col-lg-2">
                                 <label for="image1"> <img width="40px" height="40px" src="{{ asset('storage/'.$application->user->exams[0]->exam_file) }}"
                                         class="card-img" alt="#"/>
@@ -53,6 +54,7 @@
                                     <img src="{{ asset('storage/'.$application->user->exams[0]->exam_file) }}"
                                          alt="Enlarged Image"></div>
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>

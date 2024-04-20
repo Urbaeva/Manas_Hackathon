@@ -11,18 +11,22 @@
                                 @if($doc->status == 0)
                                     <img width="50px" height="50px" src="{{asset('assets/warning.png')}}">
                                     <a class="collapsed"><span> {{$doc->document->name}} </span>
+                                        <p style="font-size: 13px">{{$doc->document->description}}</p>
                                     </a>
                                 @elseif($doc->status == 1)
                                     <img width="50px" height="50px" src="{{asset('assets/painding.png')}}">
                                     <a class="collapsed"><span> {{$doc->document->name}} </span>
+                                        <p style="font-size: 13px">{{$doc->document->description}}</p>
                                     </a>
                                 @elseif($doc->status == 2)
                                     <img width="50px" height="50px" src="{{asset('assets/tick.png')}}">
                                     <a class="collapsed"><span> {{$doc->document->name}} </span>
+                                        <p style="font-size: 13px">{{$doc->document->description}}</p>
                                     </a>
                                 @else
                                     <img width="50px" height="50px" src="{{asset('assets/error.png')}}">
                                     <a class="collapsed"><span> {{$doc->document->name}} </span>
+                                        <p style="font-size: 13px">{{$doc->document->description}}</p>
                                     </a>
                                 @endif
                             </div>

@@ -21,7 +21,7 @@
         <div class="bottom">
             <div class="content">
                 <span class="name">{{ $teacher->name }}</span>
-                <span class="about-me">Lorem ipsum dolor sit amet consectetur adipisicinFcls </span>
+                <span class="about-me">{{$teacher->email}}</span>
             </div>
            <div class="bottom-bottom">
             <div class="social-links-container">
