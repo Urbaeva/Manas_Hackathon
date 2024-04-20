@@ -97,6 +97,7 @@ class UserController extends Controller
             $application->score = round($application->user->exams->first()->scores->avg('score'), 2);
 
         }
+        $post->applications = $post->applications->sortByDesc('score');
         return view('user.rating', compact('post'));
     }
 }
