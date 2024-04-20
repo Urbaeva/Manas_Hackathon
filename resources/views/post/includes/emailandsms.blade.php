@@ -8,7 +8,7 @@
                     </div>
                     <div class="bottom">
                         <div class="content">
-                            <span class="name">My Name</span>
+                            <span class="name">{{$application->user->name}}</span>
                             <span class="about-me">Lorem ipsum dolor sit amet consectetur adipisicinFcls </span>
                         </div>
                         <div class="bottom-bottom">

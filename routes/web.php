@@ -67,6 +67,10 @@ Route::group(
     Route::group(['prefix' => 'application'], function () {
         Route::get('/', [ApplicationController::class, 'index'])->name('application.index');
         Route::get('/{application}/show', [ApplicationController::class, 'show'])->name('application.show');
+        Route::get('/completeDoc/{upload}', [ApplicationController::class, 'completeDoc'])->name('application.completeDoc');
+        Route::get('/rejectDoc/{upload}', [ApplicationController::class, 'rejectDoc'])->name('application.rejectDoc');
+        Route::get('/completeAll/{application}', [ApplicationController::class, 'completeAll'])->name('application.completeAll');
+
     });
 
     Route::group(['prefix' => '/exam'], function () {
