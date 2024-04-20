@@ -5,16 +5,19 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Exam\StoreRequest;
 use App\Http\Requests\Exam\UpdateRequest;
+use App\Models\Application;
 use App\Models\Exam;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ExamController extends Controller
 {
     public function index(Post $post)
     {
-
-        return view('exam.index', compact('post'));
+        $applications = Application::all();
+        return view('exam.index', compact('post', 'applications'));
     }
 
 
@@ -23,11 +26,14 @@ class ExamController extends Controller
         return view('exam.create');
     }
 
-    public function store(StoreRequest $request)
+    public function store(StoreRequest $request, Application $application)
     {
         $data = $request->validated();
+        $data['user_id'] = $application->user->id;
+        $data['post_id'] = $application->post->id;
+        $data['exam_file'] = Storage::disk('public')->putFile('exam_files', $data['exam_file']);
         Exam::create($data);
-        return redirect()->route('exams.index');
+        return redirect()->back();
     }
 
     public function show(Exam $exam)
