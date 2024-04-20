@@ -20,4 +20,6 @@ return [
     'registered_user' => 'Kayıtlılar',
     'documents' => 'Belgeler',
     'applicants' => 'Başvuru sahipleri',
+    'programmes' => 'Programlar',
+    'rating' => 'Rating'
 ];

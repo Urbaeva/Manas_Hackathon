@@ -61,6 +61,7 @@ Route::group(
         Route::get('/tasks', [UserController::class, 'task'])->name('applicant.task');
         Route::post('/tasks/upload/{upload}', [UserController::class, 'uploadDoc'])->name('applicant.task.uploadDoc');
 
+        Route::get('/{post}', [UserController::class, 'rating'])->name('applicant.rating');
         Route::get('/profile', [UserController::class, 'profile'])->name('applicant.profile');
         Route::get('/edit/{user}', [UserController::class, 'editProfile'])->name('applicant.edit');
     });
