@@ -1,6 +1,5 @@
 <div class="tab-pane fade" id="chang-pwd" role="tabpanel">
     <div class="container-fluid">
-        <form action="{{ route('') }}" >
         <div class="row">
             <!-- startFrom -->
             @foreach($teachers as $teacher)
@@ -43,6 +42,5 @@
             <!-- EndFrom -->
             <div class="spaceFrom"></div>
         </div>
-        </form>
     </div>
 </div>
